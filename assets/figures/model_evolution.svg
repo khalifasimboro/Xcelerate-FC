@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background-color: #F8FAFC;">
+  <defs>
+    <style>
+      .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 20px; fill: #0F172A; }
+      .subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #475569; }
+      .axis-label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; fill: #64748B; font-weight: 500; }
+      .tick-text { font-family: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; fill: #64748B; }
+      .bar-val { font-family: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace; font-size: 14px; font-weight: 600; fill: #0F172A; text-anchor: middle; }
+      .bar-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #1E293B; text-anchor: middle; }
+      .bar-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #64748B; text-anchor: middle; }
+      .badge-text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+      .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4,4; }
+      .axis-line { stroke: #CBD5E1; stroke-width: 1.5; }
+    </style>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="selectedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle -->
+  <text x="50" y="45" class="title">Evolution of Possession Inference Models</text>
+  <text x="50" y="68" class="subtitle">Mean external SkillCorner H/A proxy spellF1 across five development matches (higher is better)</text>
+
+  <!-- Y-Axis Grid Lines & Ticks (Scale: 0.30 to 0.52 -> Y range: 360 to 110 => 250px for 0.22 range) -->
+  <!-- Formula: y = 360 - ((val - 0.30) / 0.22) * 250 -->
+  <line x1="80" y1="360" x2="740" y2="360" class="axis-line" />
+  <text x="70" y="364" class="tick-text" text-anchor="end">0.30</text>
+
+  <line x1="80" y1="303" x2="740" y2="303" class="grid" />
+  <text x="70" y="307" class="tick-text" text-anchor="end">0.35</text>
+
+  <line x1="80" y1="246" x2="740" y2="246" class="grid" />
+  <text x="70" y="250" class="tick-text" text-anchor="end">0.40</text>
+
+  <line x1="80" y1="189" x2="740" y2="189" class="grid" />
+  <text x="70" y="193" class="tick-text" text-anchor="end">0.45</text>
+
+  <line x1="80" y1="132" x2="740" y2="132" class="grid" />
+  <text x="70" y="136" class="tick-text" text-anchor="end">0.50</text>
+
+  <!-- Y-axis Label -->
+  <text x="-240" y="28" class="axis-label" transform="rotate(-90)" text-anchor="middle">External SkillCorner H/A proxy spellF1</text>
+
+  <!-- BARS -->
+  <!-- Bar 1: Baseline HMM = 0.4004 -> y = 360 - ((0.4004 - 0.30)/0.22)*250 = 360 - 114.1 = 245.9; height = 114.1 -->
+  <g filter="url(#shadow)">
+    <rect x="110" y="246" width="120" height="114" rx="6" fill="#93C5FD" />
+  </g>
+  <text x="170" y="235" class="bar-val">0.4004</text>
+  <text x="170" y="385" class="bar-title">M1 · Baseline</text>
+  <text x="170" y="403" class="bar-desc">Proximity + HMM</text>
+
+  <!-- Bar 2: switch_strong = 0.4501 -> y = 360 - ((0.4501 - 0.30)/0.22)*250 = 360 - 170.6 = 189.4; height = 170.6 -->
+  <g filter="url(#shadow)">
+    <rect x="270" y="189" width="120" height="171" rx="6" fill="#60A5FA" />
+  </g>
+  <text x="330" y="178" class="bar-val">0.4501</text>
+  <text x="330" y="385" class="bar-title">M2 · Persistence</text>
+  <text x="330" y="403" class="bar-desc">switch_strong</text>
+  <!-- Delta badge -->
+  <rect x="298" y="198" width="64" height="18" rx="9" fill="#1E293B" opacity="0.85" />
+  <text x="330" y="211" class="badge-text">+12.4%</text>
+
+  <!-- Bar 3: control_strong = 0.4815 -> y = 360 - ((0.4815 - 0.30)/0.22)*250 = 360 - 206.2 = 153.8; height = 206.2 -->
+  <g filter="url(#shadow)">
+    <rect x="430" y="154" width="120" height="206" rx="6" fill="url(#barGrad)" />
+  </g>
+  <text x="490" y="143" class="bar-val">0.4815</text>
+  <text x="490" y="385" class="bar-title">M3 · Ball Control</text>
+  <text x="490" y="403" class="bar-desc">control_strong</text>
+  <!-- Delta badge -->
+  <rect x="458" y="163" width="64" height="18" rx="9" fill="#1E293B" opacity="0.85" />
+  <text x="490" y="176" class="badge-text">+20.3%</text>
+
+  <!-- Bar 4: fusion_control_multiscale = 0.4823 -> y = 360 - ((0.4823 - 0.30)/0.22)*250 = 360 - 207.2 = 152.8; height = 207.2 -->
+  <g filter="url(#shadow)">
+    <rect x="590" y="153" width="120" height="207" rx="6" fill="url(#selectedGrad)" stroke="#1D4ED8" stroke-width="2" />
+  </g>
+  <text x="650" y="141" class="bar-val" style="fill: #1D4ED8;">0.4823</text>
+  <text x="650" y="385" class="bar-title" style="fill: #1D4ED8;">M4 · Selected</text>
+  <text x="650" y="403" class="bar-desc">fusion_multiscale</text>
+  <!-- Selected Winner Tag -->
+  <rect x="605" y="112" width="90" height="20" rx="4" fill="#D97706" />
+  <text x="650" y="126" class="badge-text">FINAL MODEL</text>
+
+  <!-- Bottom boundary annotation -->
+  <line x1="80" y1="425" x2="740" y2="425" stroke="#E2E8F0" stroke-width="1" />
+  <text x="410" y="445" class="axis-label" text-anchor="middle">Experimental progression evaluated on SkillCorner Open Data (Matches 1886347, 1899585, 1925299, 1996435, 2006229)</text>
+</svg>

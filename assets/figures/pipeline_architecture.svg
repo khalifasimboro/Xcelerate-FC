@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="799.2pt" height="244.8pt" viewBox="0 0 799.2 244.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-15T22:24:33.968487</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 244.8 
+L 799.2 244.8 
+L 799.2 0 
+L -0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 16.309286 173.088 
+L 169.765714 173.088 
+Q 180.276429 173.088 180.276429 163.213714 
+L 180.276429 82.902857 
+Q 180.276429 73.028571 169.765714 73.028571 
+L 16.309286 73.028571 
+Q 5.798571 73.028571 5.798571 82.902857 
+L 5.798571 163.213714 
+Q 5.798571 173.088 16.309286 173.088 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #f6f8fb; stroke: #4c75ba; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 185.080581 123.058286 
+Q 194.642588 123.058286 202.303937 123.058286 
+" clip-path="url(#pb00c63e838)" style="fill: none; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 195.903937 119.858286 
+L 202.303937 123.058286 
+L 195.903937 126.258286 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #63758a; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 220.917857 173.088 
+L 379.98 173.088 
+Q 390.490714 173.088 390.490714 163.213714 
+L 390.490714 82.902857 
+Q 390.490714 73.028571 379.98 73.028571 
+L 220.917857 73.028571 
+Q 210.407143 73.028571 210.407143 82.902857 
+L 210.407143 163.213714 
+Q 210.407143 173.088 220.917857 173.088 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #f6f8fb; stroke: #2c948e; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 395.294867 123.058286 
+Q 404.856874 123.058286 412.518223 123.058286 
+" clip-path="url(#pb00c63e838)" style="fill: none; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 406.118223 119.858286 
+L 412.518223 123.058286 
+L 406.118223 126.258286 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #63758a; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 431.132143 173.088 
+L 590.194286 173.088 
+Q 600.705 173.088 600.705 163.213714 
+L 600.705 82.902857 
+Q 600.705 73.028571 590.194286 73.028571 
+L 431.132143 73.028571 
+Q 420.621429 73.028571 420.621429 82.902857 
+L 420.621429 163.213714 
+Q 420.621429 173.088 431.132143 173.088 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #f6f8fb; stroke: #2c948e; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 605.505817 123.058286 
+Q 615.418518 123.058286 623.430561 123.058286 
+" clip-path="url(#pb00c63e838)" style="fill: none; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 617.030561 119.858286 
+L 623.430561 123.058286 
+L 617.030561 126.258286 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #63758a; stroke: #63758a; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 642.047143 173.088 
+L 786.394286 173.088 
+Q 796.905 173.088 796.905 163.213714 
+L 796.905 82.902857 
+Q 796.905 73.028571 786.394286 73.028571 
+L 642.047143 73.028571 
+Q 631.536429 73.028571 631.536429 82.902857 
+L 631.536429 163.213714 
+Q 631.536429 173.088 642.047143 173.088 
+z
+" clip-path="url(#pb00c63e838)" style="fill: #f6f8fb; stroke: #da8a31; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #152741" x="93.0375" y="115.096755" transform="rotate(-0 93.0375 115.096755)">Tracking + events</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #63758a" x="93.0375" y="143.996268" transform="rotate(-0 93.0375 143.996268)">Ball and players</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #152741" x="300.448929" y="115.139724" transform="rotate(-0 300.448929 115.139724)">Ball control</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #63758a" x="300.448929" y="143.996268" transform="rotate(-0 300.448929 143.996268)">Last controller + duels</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #152741" x="510.663214" y="115.139724" transform="rotate(-0 510.663214 115.139724)">Temporal fusion</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #63758a" x="510.663214" y="143.996268" transform="rotate(-0 510.663214 143.996268)">Multiple time scales</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #152741" x="714.220714" y="115.139724" transform="rotate(-0 714.220714 115.139724)">Viterbi</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #63758a" x="714.220714" y="143.996268" transform="rotate(-0 714.220714 143.996268)">H / A / D / X</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #152741" x="14.207143" y="31.556571" transform="rotate(-0 14.207143 31.556571)">Football-aware possession inference</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #63758a" x="14.207143" y="211.268571" transform="rotate(-0 14.207143 211.268571)">Conceptual pipeline schematic. No competition-match coordinates or predictions are included.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb00c63e838">
+   <rect x="7.2" y="7.2" width="784.8" height="230.4"/>
+  </clipPath>
+ </defs>
+</svg>

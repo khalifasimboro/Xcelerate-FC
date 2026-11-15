@@ -104,6 +104,9 @@ We extended the temporal model with rules reflecting how possession works in foo
 
 A genuine possession change should be supported by evidence of ball control, not merely a change in the closest player.
 
+![Football-Aware Possession Modeling](assets/figures/football_possession_schematic.svg)
+*Figure 1: Conceptual illustration of football-aware possession continuity. A naive nearest-player model erroneously attributes possession to defending player A1 who happens to be closest to the ball in flight (d = 1.1 m). Our model leverages last-controller memory (1.8 m radius, 10 s decay) to preserve Team H possession until verifiable turnover evidence occurs.*
+
 Our experiments introduced:
 
 **Last-controller memory.** A sustained, sufficiently close ball interaction supports the last controlling team over a limited time.
@@ -121,6 +124,9 @@ These mechanisms led to our selected model:
 ### `fusion_control_multiscale`
 
 The final H/A inference model combines ball-control evidence, spatial observations, multiscale temporal smoothing, and Viterbi decoding with strong transition penalties.
+
+![Conceptual Pipeline Architecture](assets/figures/pipeline_architecture.svg)
+*Figure 2: Conceptual pipeline architecture showing the staged flow from raw tracking and tactical events through ball-control logic, multiscale temporal fusion, and Viterbi decoding.*
 
 Each component was compared through external-match experiments and ablation tests.
 
@@ -162,12 +168,18 @@ Its available possession labels support H/A evaluation on annotated intervals. U
 
 ### External evaluation results
 
+![Model Evolution](assets/figures/model_evolution.svg)
+*Figure 3: Chronological progression of mean external SkillCorner H/A proxy spellF1 across five development matches (1886347, 1899585, 1925299, 1996435, 2006229), illustrating the successive gains from baseline HMM (0.4004) to the selected multiscale fusion model (0.4823).*
+
 | Model | Mean H/A proxy spellF1 |
 |---|---:|
 | Baseline HMM | 0.4004 |
 | `switch_strong` | 0.4501 |
 | `control_strong` | 0.4815 |
 | **`fusion_control_multiscale`** | **0.4823** |
+
+![Generalization Across External Matches](assets/figures/external_validation.svg)
+*Figure 4: Generalization across independent external SkillCorner matches. Comparison between `switch_strong` and `fusion_control_multiscale` across the five development folds, with the reserved holdout match (2017461: 0.4078) displayed separately. Figures can be regenerated using `python scripts/generate_figures.py`.*
 
 The selected model also achieved:
 
@@ -236,6 +248,13 @@ The generated file must be validated before submission using the organizers' off
 
 ```text
 Xcelerate-FC/
+├── assets/
+│   └── figures/
+│       ├── model_evolution.svg
+│       ├── external_validation.svg
+│       ├── football_possession_schematic.svg
+│       ├── pipeline_architecture.svg
+│       └── ablation_heatmap.svg
 ├── notebooks/
 │   └── xcelerate-fc.ipynb
 ├── report/
@@ -245,7 +264,8 @@ Xcelerate-FC/
 ├── docs/
 │   └── DATA_ACCESS.md
 ├── scripts/
-│   └── validate_submission.py
+│   ├── validate_submission.py
+│   └── generate_figures.py
 ├── old_implementations/
 │   ├── Xcelerate_notebook_V2.ipynb
 │   ├── Xcelerate_FC_Hackathon.ipynb
@@ -256,11 +276,13 @@ Xcelerate-FC/
 └── README.md
 ```
 
+- **[`assets/figures/`](assets/figures/)**: Vector SVG diagrams and evaluation charts illustrating model progression, match-level generalization, football ball-control principles, and pipeline architecture.
 - **[`notebooks/xcelerate-fc.ipynb`](notebooks/xcelerate-fc.ipynb)**: Main reproducible research and official submission notebook documenting data loading, M1–M4 experiments, TabICLv2 screening, model selection and submission export, containing the complete saved outputs from the executed Kaggle run.
 - **[`report/Xcelerate FC.pdf`](report/Xcelerate%20FC.pdf)**: Complete technical report describing our methodology, football modeling principles, validation results and team contributions.
 - **[`report/Xcelerate FC.tex`](report/Xcelerate%20FC.tex)**: LaTeX source for the report, accompanied by evaluation figures in [`report/figures/`](report/figures/).
 - **[`docs/DATA_ACCESS.md`](docs/DATA_ACCESS.md)**: Data access policy, Kaggle dataset authorization procedure and competition compliance guidelines.
 - **[`scripts/validate_submission.py`](scripts/validate_submission.py)**: Verification script for output dimensions, schema, label validity and reference SHA-256 integrity.
+- **[`scripts/generate_figures.py`](scripts/generate_figures.py)**: Reproducible plotting script to generate the publication-style SVG figures.
 - **[`old_implementations/`](old_implementations/)**: Archive of exploratory and milestone work from earlier phases (Colab starter notebook, M2 iteration, and preliminary progress notes).
 - **[`requirements.txt`](requirements.txt)**: Core dependencies and library versions for reproducing experiments.
 

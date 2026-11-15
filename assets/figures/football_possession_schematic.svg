@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="100%" height="100%" style="background-color: #F8FAFC;">
+  <defs>
+    <style>
+      .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 20px; fill: #0F172A; }
+      .subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #475569; }
+      .pitch-line { stroke: #D9EAE3; stroke-width: 1.5; fill: none; }
+      .pitch-line-faint { stroke: #7EA39B; stroke-opacity: 0.25; stroke-width: 1; fill: none; }
+      .label-box-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 13px; }
+      .label-box-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #475569; }
+      .player-text { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-weight: 700; font-size: 11px; text-anchor: middle; }
+      .field-text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 600; fill: #FFFFFF; }
+      .mono-metric { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 600; }
+    </style>
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="106%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle -->
+  <text x="40" y="38" class="title">Football-Aware Possession Modeling: Control vs Proximity</text>
+  <text x="40" y="60" class="subtitle">Why nearest-player geometry fails during passes, and how last-controller memory preserves possession</text>
+
+  <!-- Pitch Container -->
+  <g transform="translate(40, 80)" filter="url(#cardShadow)">
+    <!-- Pitch Turf -->
+    <rect x="0" y="0" width="780" height="250" rx="12" fill="#143B33" stroke="#0F2922" stroke-width="2"/>
+
+    <!-- Subtle field zones -->
+    <line x1="156" y1="5" x2="156" y2="245" class="pitch-line-faint" />
+    <line x1="312" y1="5" x2="312" y2="245" class="pitch-line-faint" />
+    <line x1="468" y1="5" x2="468" y2="245" class="pitch-line-faint" />
+    <line x1="624" y1="5" x2="624" y2="245" class="pitch-line-faint" />
+
+    <!-- Outer boundary & Halfway line -->
+    <rect x="20" y="15" width="740" height="220" rx="3" class="pitch-line" />
+    <line x1="390" y1="15" x2="390" y2="235" class="pitch-line" />
+    <circle cx="390" cy="125" r="45" class="pitch-line" />
+    <circle cx="390" cy="125" r="3" fill="#D9EAE3" />
+
+    <!-- Penalty Area left & right -->
+    <rect x="20" y="65" width="85" height="120" class="pitch-line" />
+    <rect x="675" y="65" width="85" height="120" class="pitch-line" />
+
+    <!-- Pass Trajectory arc from H1 to H2 -->
+    <path d="M 170 140 Q 340 40 480 120" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="6,6" />
+    <!-- Trajectory Direction Arrow -->
+    <polygon points="485,124 472,112 476,128" fill="#38BDF8" />
+
+    <!-- Control radius around H1 (passer) -->
+    <circle cx="170" cy="140" r="36" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="3,3" />
+    <text x="170" y="190" class="field-text" text-anchor="middle" style="font-size: 10px; fill: #7DD3FC;">Control Radius (1.8m)</text>
+
+    <!-- Proximity threshold circle around ball -->
+    <circle cx="410" cy="98" r="48" fill="#FFFFFF" fill-opacity="0.06" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <line x1="410" y1="98" x2="445" y2="82" stroke="#F59E0B" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="440" y="74" class="field-text" style="font-size: 10px; fill: #FCD34D;">d = 1.1m (closest)</text>
+
+    <!-- Ball in Flight -->
+    <circle cx="410" cy="98" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" />
+    <circle cx="410" cy="98" r="3" fill="#0F172A" />
+
+    <!-- Team H Players (Home - Blue) -->
+    <!-- Player H1: Passer (Origin) -->
+    <circle cx="170" cy="140" r="14" fill="#2563EB" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="170" y="144" class="player-text" fill="#FFFFFF">H1</text>
+    <text x="170" y="116" class="field-text" text-anchor="middle">Passer (Last Controller)</text>
+
+    <!-- Player H2: Intended Receiver -->
+    <circle cx="560" cy="160" r="14" fill="#2563EB" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="560" y="164" class="player-text" fill="#FFFFFF">H2</text>
+    <text x="560" y="190" class="field-text" text-anchor="middle">Intended Receiver</text>
+
+    <!-- Another teammate H3 -->
+    <circle cx="280" cy="65" r="14" fill="#2563EB" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="280" y="69" class="player-text" fill="#FFFFFF">H3</text>
+
+    <!-- Team A Players (Away - Amber/Orange) -->
+    <!-- Defender A1: Physically nearest to ball during pass, but NOT in control -->
+    <circle cx="445" cy="82" r="14" fill="#D97706" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="445" y="86" class="player-text" fill="#FFFFFF">A1</text>
+    <text x="450" y="52" class="field-text" text-anchor="middle" style="fill: #FDE68A;">Defender A1</text>
+    <text x="450" y="64" class="field-text" text-anchor="middle" style="font-size: 9px; fill: #FDE68A;">(Nearest to ball in flight)</text>
+
+    <!-- Other defenders A2, A3 -->
+    <circle cx="520" cy="75" r="14" fill="#D97706" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="520" y="79" class="player-text" fill="#FFFFFF">A2</text>
+
+    <circle cx="620" cy="115" r="14" fill="#D97706" stroke="#FFFFFF" stroke-width="2.5" />
+    <text x="620" y="119" class="player-text" fill="#FFFFFF">A3</text>
+
+    <!-- In-pitch status banners -->
+    <rect x="30" y="25" width="230" height="24" rx="4" fill="#0F172A" opacity="0.85" />
+    <text x="40" y="41" class="field-text" style="font-size: 11px;">PASS IN PROGRESS · Team H → Team H</text>
+  </g>
+
+  <!-- Explanatory Comparison Cards (Bottom) -->
+  <!-- Card 1: Naive Geometric Approach -->
+  <g transform="translate(40, 345)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="375" height="115" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" />
+    <rect x="15" y="12" width="22" height="22" rx="11" fill="#FEE2E2" />
+    <text x="26" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="13" fill="#DC2626" text-anchor="middle">✕</text>
+    <text x="46" y="28" class="label-box-title" fill="#991B1B">Naive Proximity Model (Nearest Player)</text>
+
+    <text x="15" y="56" class="label-box-desc">Decision: <tspan class="mono-metric" fill="#DC2626">Possession = A (Turnover)</tspan></text>
+    <text x="15" y="76" class="label-box-desc">Because Defender A1 happens to be 1.1m from the ball while</text>
+    <text x="15" y="94" class="label-box-desc">it travels in the air, a spurious turnover is flagged every pass.</text>
+  </g>
+
+  <!-- Card 2: Football-Aware Approach (Our Model) -->
+  <g transform="translate(445, 345)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="375" height="115" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
+    <rect x="15" y="12" width="22" height="22" rx="11" fill="#D1FAE5" />
+    <text x="26" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="13" fill="#059669" text-anchor="middle">✓</text>
+    <text x="46" y="28" class="label-box-title" fill="#065F46">Our Football-Aware Model (Last-Controller Memory)</text>
+
+    <text x="15" y="56" class="label-box-desc">Decision: <tspan class="mono-metric" fill="#059669">Possession = H (Continuous)</tspan></text>
+    <text x="15" y="76" class="label-box-desc">Maintains H1 memory (1.8m radius, 10s expiry) across flight.</text>
+    <text x="15" y="94" class="label-box-desc">Requires sustained control evidence before granting a turnover.</text>
+  </g>
+</svg>
