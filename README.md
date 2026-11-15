@@ -235,6 +235,11 @@ Xcelerate-FC/
 │   └── DATA_ACCESS.md
 ├── scripts/
 │   └── validate_submission.py
+├── old_implementations/
+│   ├── Xcelerate_notebook_V2.ipynb
+│   ├── Xcelerate_FC_Hackathon.ipynb
+│   ├── Rapport_technique_M2_More_Than_a_Hack_2027.docx
+│   └── README.md
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -245,6 +250,7 @@ Xcelerate-FC/
 - **[`report/Xcelerate FC.tex`](report/Xcelerate%20FC.tex)**: LaTeX source for the report, accompanied by evaluation figures in [`report/figures/`](report/figures/).
 - **[`docs/DATA_ACCESS.md`](docs/DATA_ACCESS.md)**: Data access policy, Kaggle dataset authorization procedure and competition compliance guidelines.
 - **[`scripts/validate_submission.py`](scripts/validate_submission.py)**: Verification script for output dimensions, schema, label validity and reference SHA-256 integrity.
+- **[`old_implementations/`](old_implementations/)**: Archive of exploratory and milestone work from earlier phases (Colab starter notebook, M2 iteration, and preliminary progress notes).
 - **[`requirements.txt`](requirements.txt)**: Core dependencies and library versions for reproducing experiments.
 
 ## 6. Reproducing Our Results
@@ -366,7 +372,7 @@ Our pipeline follows the official rules:
 - The public five-minute ground truth was used only for pipeline diagnostics.
 - External SkillCorner labels were used only on other matches.
 - No private tracking, video, tactical XML or derived frame-level tracking is redistributed in this public repository.
-- **Pre-existing repository assets:** The legacy root file `Données-Prediction Baseline.csv` committed in earlier repository revisions contains derived tracking features from the competition video. In accordance with the competition data license, repository administrators should evaluate removing or untracking this legacy file from public history to ensure strict licensing compliance.
+- **Pre-existing repository assets:** The legacy file `Données-Prediction Baseline.csv` previously committed on `main` has been removed from the repository tree to ensure strict compliance with the competition's private data guidelines.
 
 Our public code is intended to be inspectable and reproducible by authorized reviewers with access to the original assets.
 
