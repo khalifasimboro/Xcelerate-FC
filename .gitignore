@@ -1,0 +1,31 @@
+# Never redistribute competition private assets or derived data.
+/kaggle/input/
+/kaggle/working/
+data/
+private-data/
+outputs/
+**/*_tactical_atd.*
+**/*_tactical_smart_tagging.xml
+**/*_tactical_homography.csv
+**/*_possession_gt_public.csv
+**/*_possession_gt.csv
+**/*tracking*.jsonl
+**/*tracking*.gz
+**/*_match.json
+**/*_results_per_frame.csv
+**/XC*frames*divergence*.csv
+**/XC*_target*.csv
+**/Xcelerate.csv
+**/Xcelerate FC.csv
+**/*.pt
+**/*.pth
+**/__pycache__/
+.ipynb_checkpoints/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+.env
+.env.*
