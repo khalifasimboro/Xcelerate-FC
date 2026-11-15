@@ -18,9 +18,20 @@ Rather than treating possession as an independent classification problem at ever
 - BATIONO Max Dieudonné Nathan
 - SIMBORO Rydouane
 
-**Repository:** https://github.com/khalifasimboro/Xcelerate-FC
+---
 
-**Technical report:** [Xcelerate FC.pdf](report/Xcelerate%20FC.pdf)
+## 📌 Official Submission Deliverables
+
+# 📓 [Official Submission Notebook: `notebooks/xcelerate-fc.ipynb`](notebooks/xcelerate-fc.ipynb)
+# 📄 [Technical Report: `report/Xcelerate FC.pdf`](report/Xcelerate%20FC.pdf)
+
+### 📁 Direct folder links:
+- **Notebooks Directory:** [`notebooks/`](notebooks/)
+- **Technical Report & Figures:** [`report/`](report/)
+
+> **Saved Run Outputs:** The submission notebook [`notebooks/xcelerate-fc.ipynb`](notebooks/xcelerate-fc.ipynb) contains the complete saved execution outputs, intermediate evaluations, and diagnostic figures from our final Kaggle run.
+
+**Repository:** https://github.com/khalifasimboro/Xcelerate-FC
 
 ---
 
@@ -245,7 +256,7 @@ Xcelerate-FC/
 └── README.md
 ```
 
-- **[`notebooks/xcelerate-fc.ipynb`](notebooks/xcelerate-fc.ipynb)**: Main reproducible research notebook documenting data loading, M1–M4 experiments, TabICLv2 screening, model selection and submission export. Outputs are cleared to prevent redistribution of derived private match material.
+- **[`notebooks/xcelerate-fc.ipynb`](notebooks/xcelerate-fc.ipynb)**: Main reproducible research and official submission notebook documenting data loading, M1–M4 experiments, TabICLv2 screening, model selection and submission export, containing the complete saved outputs from the executed Kaggle run.
 - **[`report/Xcelerate FC.pdf`](report/Xcelerate%20FC.pdf)**: Complete technical report describing our methodology, football modeling principles, validation results and team contributions.
 - **[`report/Xcelerate FC.tex`](report/Xcelerate%20FC.tex)**: LaTeX source for the report, accompanied by evaluation figures in [`report/figures/`](report/figures/).
 - **[`docs/DATA_ACCESS.md`](docs/DATA_ACCESS.md)**: Data access policy, Kaggle dataset authorization procedure and competition compliance guidelines.
